@@ -85,7 +85,7 @@
 	</div>
 	<div class="kira-count">
 		<div><span>文章</span>2</div>
-		<div><span>标签</span>0</div>
+		<div><span>标签</span>1</div>
 		<div><span>分类</span>1</div>
 	</div>
 	<div class="kira-list">
@@ -246,6 +246,13 @@
 
 		
 			
+	<div class="kira-widget-wrap">
+		<div id="randomtagcloud" class="kira-widget tagcloud kira-rainbow">
+			<a href="/tags/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/" style="font-size: 10px;">胡思乱想</a>
+		</div>
+		
+	</div>
+
 
 		
 			
@@ -382,28 +389,24 @@
 	
 	<div class="kira-post-footer">
 		
+	<link rel="stylesheet" href="https://unpkg.com/gitalk@latest/dist/gitalk.css" />
+	<div id="gitalk"></div>
+	<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+	<script type="text/javascript">
+		const gitalk = new Gitalk({
+			clientID: 'Ov23li62j7DuoawDlTMZ',
+			clientSecret: '40bbf4226d6fb73af49aee93bdb63d5366d868df',
+			id: 'test',
+			repo: 'blog-comments',
+			owner: 'noirz607',
+			admin: 'noirz607',
+			title: '',
+		});
+		gitalk.render('gitalk');
+	</script>
+
 
 		
-	<div class="giscus"></div>
-  
-    <script src="https://giscus.app/client.js"
-      data-repo="-your github username-/-your giscus repo-"
-      data-repo-id="-your giscus repo ID-"
-      data-category="Announcements"
-      data-category-id="-giscus category id-"
-      data-mapping="pathname"
-      data-strict="0"
-      data-reactions-enabled="1"
-      data-emit-metadata="0"
-      data-input-position="top"
-      data-theme="light"
-      data-lang="en"
-      data-loading="lazy"
-      crossorigin="anonymous"
-      async  
-    ></script>
-  
-
 	</div>
 	
 </div>

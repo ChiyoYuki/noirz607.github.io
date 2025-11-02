@@ -101,7 +101,7 @@ gitalk:
     repo: blog-comments # 存放评论的 issue 所在的 repo
     clientID: Ov23li62j7DuoawDlTMZ # GitHub Client ID
     clientSecret: 40bbf4226d6fb73af49aee93bdb63d5366d868df # GitHub Client Secret
-    title: '' # Gitalk Issue Title
+    title: '{{ title }}' # Gitalk Issue Title
 # 你们不要在这里填我的 giscus 配置项，不然你们博客下的评论会全部跑到我的仓库下面……
 # https://giscus.app/zh-CN 可以在这个网站上手动选择配置填到下方对应位置
 giscus:
