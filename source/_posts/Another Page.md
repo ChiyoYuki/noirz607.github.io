@@ -3,7 +3,9 @@ title: Another Page
 date: 2025-11-02 22:29:29
 categories:
     - 一些碎碎念
-cover: \images\cover_Another_Page.jpg
+cover: /images/cover_Another_Page.jpg
+tag:
+    - 胡思乱想
 ---
 # Another Page
 >但有时候我也在想：  
