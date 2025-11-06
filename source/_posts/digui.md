@@ -209,3 +209,89 @@ gemini的解释如下：
 
 ---
 我自己再阅读研究一下，递归的本质我是真的没有理解，虽然代码都能看懂，但是自己写写不出来。
+
+## [P2437 蜜蜂路线](https://www.luogu.com.cn/problem/P2437)
+
+简单递推，记得他妈的高精度
+
+```cpp
+//已修改
+#include <bits/stdc++.h>
+using namespace std;
+string add(string a, string b)
+{
+    int len = max(a.size(), b.size()), jw = 0;
+    string c = "";
+    while (a.size() < len) a = '0' + a;
+    while (b.size() < len) b = '0' + b;
+    for (int i = len - 1; i >= 0; i--)
+    {
+        int t1 = a[i] - '0', t2 = b[i] - '0';
+        int t = t1 + t2 + jw;
+        jw = t / 10;
+        t %= 10;
+        char ch = t + '0';
+        c = ch + c;
+    }
+    if (jw != 0) return '1' + c;
+    return c;
+}
+int main()
+{
+    int n,m;
+    cin >>m>>n;
+    if(m==n)
+    {
+        cout <<1;
+        return 0;
+    }
+    int num=n-m+1;
+    vector <string> a(num);
+    a[0]='1';
+    a[1]='1';
+    for (int i=2;i<num;i++) a[i]=add(a[i-1],a[i-2]);
+    cout << a[num -1];
+}
+```
+~~不是 他妈的为什么错了？~~
+让我看下代码。。  
+vector初始化了什么东西？居然还能通过编译？  
+还有逻辑错误天，`m=n`的时候要做一下修正 ~~（真的有这个测试点吗）~~  
+修改完了  
+我草全部wa  
+我是傻逼，==写成=了。
+
+## [P1164 小A点菜](https://www.luogu.com.cn/problem/P1164)
+又想dfs了，但是肯定tle。
+应该是dp吧，找一下递推的关系式。
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int m,n;
+int main()
+{
+    cin>>n>>m;
+    int f[n][10010];
+    int a[n];
+    memset(f, 0, sizeof(f));
+    for (int i=0;i<n;i++)  
+    {
+        cin >> a[i];
+    }
+    f[0][0]=1;
+    f[0][a[0]]=1;
+    for (int i=1;i<n;i++)
+    {
+        for (int j=0;j<=m;j++)
+        {
+            f[i][j] = f[i-1][j];
+            if (j>=a[i]) f[i][j]+=f[i-1][j-a[i]];
+        }
+    }
+    cout << f[n-1][m];
+}
+```
+有点魂不守舍了，写了一堆低级错误
+
+---
+
